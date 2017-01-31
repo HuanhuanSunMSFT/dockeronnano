@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+  myapp:
+    image: myapp
+    build:
+      args:
+        source: myapp/
+      context: .\
+      dockerfile: Dockerfile
+    ports:
+      - "80"
+networks:
+  default:
+    external:
+      name: nat
