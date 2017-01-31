@@ -5,8 +5,8 @@ services:
     image: myapp
     build:
       args:
-        source: myapp/
-      context: .\
+        source: bin/Release/PublishOutput/
+      context: .\myapp
       dockerfile: Dockerfile
     ports:
       - "80"
