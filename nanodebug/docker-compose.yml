@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   myapp:
-    image: myapp
+    image: myappdebug
     build:
       context: .\myapp
       dockerfile: Dockerfile
@@ -11,6 +11,7 @@ services:
     volumes:
       - .\myapp:c:\app
       - ~\.nuget\packages:c:\.nuget\packages:ro
+    entrypoint: powershell -Command [System.Threading.Thread]::Sleep([System.Threading.Timeout]::Infinite)
 networks:
   default:
     external:

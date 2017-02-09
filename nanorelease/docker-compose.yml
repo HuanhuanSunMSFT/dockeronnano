@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   myapp:
-    image: myapp
+    image: myapprelease
     build:
       context: .\myapp
       dockerfile: Dockerfile
