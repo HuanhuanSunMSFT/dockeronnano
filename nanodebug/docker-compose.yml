@@ -1,0 +1,19 @@
+version: '2.1'
+
+services:
+  myapp:
+    image: myapp
+    build:
+      context: .\myapp
+      dockerfile: Dockerfile
+    ports:
+      - "80"
+    volumes:
+      - .\myapp:c:\app
+      - ~\.nuget\packages:c:\nuget\packages:ro
+      - ~\onecoremsvsmon:C:\msvsmon:ro
+    entrypoint: powershell -Command [System.Threading.Thread]::Sleep([System.Threading.Timeout]::Infinite)
+networks:
+  default:
+    external:
+      name: nat

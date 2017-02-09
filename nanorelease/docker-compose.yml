@@ -1,0 +1,15 @@
+version: '2.1'
+
+services:
+  myapp:
+    image: myapp
+    build:
+      context: .\myapp
+      dockerfile: Dockerfile
+    ports:
+      - "80"
+    entrypoint: powershell -Command [System.Threading.Thread]::Sleep([System.Threading.Timeout]::Infinite)
+networks:
+  default:
+    external:
+      name: nat
