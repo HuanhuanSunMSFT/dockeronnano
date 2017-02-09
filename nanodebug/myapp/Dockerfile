@@ -6,4 +6,4 @@ WORKDIR /app
 
 EXPOSE 80
 
-ENTRYPOINT ["dotnet", "myapp.dll"]
+ENTRYPOINT ["dotnet", "--additionalprobingpath", "c:\\.nuget\\packages", "bin\\Debug\\netcoreapp1.1\\myapp.dll"]

@@ -10,9 +10,7 @@ services:
       - "80"
     volumes:
       - .\myapp:c:\app
-      - ~\.nuget\packages:c:\nuget\packages:ro
-      - ~\onecoremsvsmon:C:\msvsmon:ro
-    entrypoint: powershell -Command [System.Threading.Thread]::Sleep([System.Threading.Timeout]::Infinite)
+      - ~\.nuget\packages:c:\.nuget\packages:ro
 networks:
   default:
     external:
